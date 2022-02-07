@@ -1136,7 +1136,7 @@ init(EffortJointInterface *const eff_joint_iface,
         odom_pub_.msg_.twist.twist.linear.z = 0;
         odom_pub_.msg_.twist.twist.angular.x = 0;
         odom_pub_.msg_.twist.twist.angular.y = 0;
-        odom_pub_.init(ctrlr_nh, "/odom", 1);
+//         odom_pub_.init(ctrlr_nh, "/odom", 1);
 
         odom_tf_pub_.msg_.transforms.resize(1);
         geometry_msgs::TransformStamped& odom_tf_trans =
@@ -1144,7 +1144,7 @@ init(EffortJointInterface *const eff_joint_iface,
         odom_tf_trans.header.frame_id = odom_pub_.msg_.header.frame_id;
         odom_tf_trans.child_frame_id = odom_pub_.msg_.child_frame_id;
         odom_tf_trans.transform.translation.z = 0;
-        odom_tf_pub_.init(ctrlr_nh, "/tf", 1);
+//         odom_tf_pub_.init(ctrlr_nh, "/tf", 1);
     }
 
     vel_cmd_sub_ = ctrlr_nh.subscribe("/cmd_vel", 1,
